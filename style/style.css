@@ -13,6 +13,28 @@ title {
   background-color: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 
+header {
+  width: 100%;
+  background-color: rgb(218, 156, 225);
+  font-family: "Mansalva", cursive;
+  font-size: 35px;
+  color: honeydew;
+  letter-spacing: 0.2em;
+  padding-left: 1em;
+  text-shadow: 1px 2px 3px rgba(117, 18, 209, 0.849);
+}
+header a {
+  text-decoration: none;
+  color: honeydew;
+  margin-top: 2px;
+  margin-left: 1em;
+  text-align: left;
+  font-size: 35px;
+}
+header a:hover {
+  color: rgb(108, 60, 156);
+}
+
 body {
   background-color: #f0ae90;
   background-image: linear-gradient(#f0ae90, 80%, rgba(191, 63, 223, 0.39));
