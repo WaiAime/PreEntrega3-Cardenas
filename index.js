@@ -27,9 +27,6 @@ function imprimirProductosEnHTML(array) {
     let contenedor = document.getElementById("contenedor");
     contenedor.innerHTML = "";
 
-
-
-
     // Se crea el producto a medida que se recorre el array
     for (const sesion of array) {
             let ficha = document.createElement("div");
@@ -95,8 +92,8 @@ function eliminarCarrito() {
     localStorage.removeItem("carritoEnStorage");    // localStorage.clear()
     swal("Carrito vacio", "", "success");
 
-    document.getElementById("tabla-carrito").innerHTML = "";
-    document.getElementById("acciones-carrito").innerHTML = "";
+    document.getElementById("sesionesElegidas").innerHTML = "";
+    document.getElementById("acciones").innerHTML = "";
 }
 
 function obtenerCostoTotal(array) {
@@ -104,7 +101,7 @@ function obtenerCostoTotal(array) {
 }
 
 function imprimirTabla(array) {
-    let contenedor = document.getElementById("tabla-carrito");
+    let contenedor = document.getElementById("sesionesElegidas");
     contenedor.innerHTML = "";
 
     let tabla = document.createElement("div");
@@ -143,12 +140,64 @@ function imprimirTabla(array) {
     }
 
     let costoTotal = obtenerCostoTotal(array);
-    let accionesCarrito = document.getElementById("acciones-carrito");
+    let accionesCarrito = document.getElementById("acciones");
     accionesCarrito.innerHTML = `
 		<h5>CostoTotal: $${costoTotal}</h5></br>
 		<button id="vaciarCarrito" onclick="eliminarCarrito()" class="btn btn-warning">Vaciar Carrito</button>
 	`;
 }
+//ntento de reserva
+    const form = document.getElementById("contactoReserva");
+    form.innerHTML = `
+    <div class="form-row">
+        <div class="col-md-4 mb-3" >
+            <label for="validationCustom01">Nombre para la reserva</label>
+            <input type="text" id="reservaNombre" class="form-control" id="validationCustom01" placeholder="Ingresá tu nombre"  required>
+            <div class="valid-feedback">
+            </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationCustom02">Contacto</label>
+            <input type="text" class="form-control" id="reservaTelefono" placeholder="Ingresá tu Teléfono"  required>
+            <div class="valid-feedback">  </div>
+        </div>
+        <div class="col-md-4 mb-3">
+            <label for="validationCustomUsername">Email</label>
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <span class="input-group-text" id="inputGroupPrepend">@</span>
+                </div>
+                <input type="email" class="form-control" id="reservaMail"  placeholder="Email" aria-describedby="inputGroupPrepend" required>
+                <div class="invalid-feedback">Ingresá tu mail
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <button class="btn btn-primary" type="submit">RESERVAR</button>
+`
+;
+document.body.appendChild(contactoReserva);
+
+//funcion para alerta si falta un dato
+(function() {
+    'use strict';
+window.addEventListener('load', function() {
+    let forms = document.getElementsByClassName('needs-validation');
+    let validation = Array.prototype.filter.call(forms, function(form) {
+        form.addEventListener('submit', function(event) {
+            if (form.checkValidity() === false) {
+                event.preventDefault();
+                event.stopPropagation();
+            }
+        form.classList.add('was-validated');
+            }, false);
+        });
+    }, false);
+})();
+
+
+//FIN INTENTO DE RESERVA
 
 function filtrarBusqueda(e) {
     e.preventDefault();
@@ -174,6 +223,7 @@ function chequearCarritoEnStorage() {
 
         return array;
     }
+
     return [];
 }
 
