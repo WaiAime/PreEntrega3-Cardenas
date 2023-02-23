@@ -33,7 +33,8 @@ function imprimirProductosEnHTML(array) {
 
             //MODIFICAR FOTOS O SACAR
         ficha.innerHTML = `
-        <div class="card text-center" style="width: 25rem;">
+        <div  style="display: flex; flex-wrap: wrap; margin-left: 6%">
+        <div class="card text-center" style="max-width: 25rem;">
             <div class="card-body">    
                 <img src="${sesion.img}" id="" class="card-img-top img-fluid" alt="">
                 <h2 class="card-title">${sesion.tipo}</h2>
@@ -49,7 +50,6 @@ function imprimirProductosEnHTML(array) {
 
         contenedor.appendChild(ficha);
 
-        // asigno evento,
         let boton = document.getElementById(`agregar${sesion.tipo}${sesion.id}`);
         boton.addEventListener("click", () => agregarAlCarrito(sesion));
     }
@@ -89,8 +89,9 @@ function eliminarDelCarrito(id) {
 
 function eliminarCarrito() {
     carrito = [];
-    localStorage.removeItem("carritoEnStorage");    // localStorage.clear()
+    localStorage.removeItem("carritoEnStorage");  
     swal("Carrito vacio", "", "success");
+
 
     document.getElementById("sesionesElegidas").innerHTML = "";
     document.getElementById("acciones").innerHTML = "";
@@ -107,7 +108,7 @@ function imprimirTabla(array) {
     let tabla = document.createElement("div");
 
     tabla.innerHTML = `
-        <table id="tablaCarrito" class="table table-hover">
+        <table id="cuadroElegidos" class="table table-hover">
             <thead>         
                 <tr>
                     <th>Mis Elegidos</th>
@@ -140,28 +141,30 @@ function imprimirTabla(array) {
     }
 
     let costoTotal = obtenerCostoTotal(array);
-    let accionesCarrito = document.getElementById("acciones");
+    let accionesCarrito = document.getElementById ("acciones");
     accionesCarrito.innerHTML = `
-		<h5>CostoTotal: $${costoTotal}</h5></br>
-		<button id="vaciarCarrito" onclick="eliminarCarrito()" class="btn btn-warning">Vaciar Carrito</button>
-	`;
+    <h5>PrecioTotal: $${costoTotal}</h5></br>
+    <button id="vaciarCarrito" onclick= "eliminarCarrito()" class="btn btn-light">Vaciar Carrito</button>
+`;
 }
+
 //ntento de reserva
-    const form = document.getElementById("contactoReserva");
+const form = document.getElementById("contactoReserva");
     form.innerHTML = `
     <div class="form-row">
-        <div class="col-md-4 mb-3" >
+        <div class="col-md-4 mb-3 lg-3" >
             <label for="validationCustom01">Nombre para la reserva</label>
             <input type="text" id="reservaNombre" class="form-control" id="validationCustom01" placeholder="Ingresá tu nombre"  required>
             <div class="valid-feedback">
             </div>
         </div>
-        <div class="col-md-4 mb-3">
+
+        <div class="col-md-4 mb-3 lg-3">
             <label for="validationCustom02">Contacto</label>
             <input type="text" class="form-control" id="reservaTelefono" placeholder="Ingresá tu Teléfono"  required>
             <div class="valid-feedback">  </div>
         </div>
-        <div class="col-md-4 mb-3">
+        <div class="col-md-4 mb-3 lg-3">
             <label for="validationCustomUsername">Email</label>
             <div class="input-group">
                 <div class="input-group-prepend">
@@ -227,11 +230,7 @@ function chequearCarritoEnStorage() {
     return [];
 }
 
-// ************** EVENTO **************
-let btnFiltrar = document.getElementById("btnFiltrar");
-btnFiltrar.addEventListener("click", filtrarBusqueda);
 
-// ************** CONSTANTES Y VARIABLES **************
 
 const sesiones = [
     {
@@ -253,7 +252,7 @@ const sesiones = [
         tipo: "Terapia Sacrouterina",
         descripcion: "Duración  1hs 30min",
         costo: 2800,
-        img: "./img/coflerblock.jpg",
+        img: "ritoU.JPG",
     },
     {
         id: 3,
