@@ -149,7 +149,7 @@ const form = document.getElementById("contactoReserva");
     <div class="form-row">
         <div class="col-md-4 mb-3 lg-3" >
             <label for="validationCustom01">Nombre para la reserva</label>
-            <input type="text" id="reservaNombre" class="form-control" id="validationCustom01" placeholder="Ingresá tu nombre"  required>
+            <input type="text" id="reservaNombre" class="form-control"  placeholder="Ingresá tu nombre"  required>
             <div class="valid-feedback">
             </div>
         </div>
@@ -192,18 +192,21 @@ window.addEventListener('load', function() {
             }, false);
         });
     }, false);
+
+    
+
 })();
 
 
-/*INTENTOS LOCALSTORAGE
-const inputNombre= document.getElementById("form");
-localStorage.setItem("form", inputNombre.value);
 
-//const datosReserva= {id:reservaNombre, dato:""};
-l//ocalStorage.setItem('datosReserva',JSON.stringify(''));
-
+/*/INTENTO fallido LOCALSTORAGE
+const datosReserva= document.querySelector('#reservaNombre');
+const form= document.querySelector('form');
+form.addEventListener ("submit", function (e){
+    e.preventDefault();
+});
+localStorage.setItem("contactoReseva",datosReserva.value);
 */
-//--------------
 
 
 function chequearElegidosEnStorage() {
