@@ -21,13 +21,10 @@ class Sesion {
     }
 }
 
-// ************** DECLARACIÓN DE FUNCIONES ************** //
-
 function imprimirProductosEnHTML(array) {
     let contenedor = document.getElementById("contenedor");
     contenedor.innerHTML = "";
 
-    // Se crea el producto a medida que se recorre el array
     for (const sesion of array) {
             let ficha = document.createElement("div");
 
@@ -69,7 +66,7 @@ function agregarAlCarrito(producto) {
     }
 
 
-    localStorage.setItem("carritoEnStorage", JSON.stringify(carrito));
+    localStorage.setItem("elegidosEnStorage", JSON.stringify(carrito));
     imprimirTabla(carrito);
 }
 
@@ -83,15 +80,13 @@ function eliminarDelCarrito(id) {
         carrito.splice(index, 1);
     }
 
-    localStorage.setItem("carritoEnStorage", JSON.stringify(carrito));
+    localStorage.setItem("elegidosEnStorage", JSON.stringify(carrito));
     imprimirTabla(carrito);
 }
 
 function eliminarCarrito() {
     carrito = [];
-    localStorage.removeItem("carritoEnStorage");  
-    swal("Carrito vacio", "", "success");
-
+    localStorage.removeItem("elegidosEnStorage");  
 
     document.getElementById("sesionesElegidas").innerHTML = "";
     document.getElementById("acciones").innerHTML = "";
@@ -148,7 +143,7 @@ function imprimirTabla(array) {
 `;
 }
 
-//ntento de reserva
+//RESERVA
 const form = document.getElementById("contactoReserva");
     form.innerHTML = `
     <div class="form-row">
@@ -177,7 +172,7 @@ const form = document.getElementById("contactoReserva");
         </div>
     </div>
     </div>
-    <button class="btn btn-primary" type="submit">RESERVAR</button>
+    <button id="reservacion" class="btn btn-primary" type="submit">RESERVAR</button>
 `
 ;
 document.body.appendChild(contactoReserva);
@@ -200,25 +195,26 @@ window.addEventListener('load', function() {
 })();
 
 
-//FIN INTENTO DE RESERVA
+/*INTENTOS LOCALSTORAGE
+const inputNombre= document.getElementById("form");
+localStorage.setItem("form", inputNombre.value);
 
-function filtrarBusqueda(e) {
-    e.preventDefault();
-    let ingreso = document.getElementById("busqueda").value.toLowerCase();
-    let arrayFiltrado = sesion.filter((elemento) => elemento.tipo.toLowerCase().includes(ingreso));
+//const datosReserva= {id:reservaNombre, dato:""};
+l//ocalStorage.setItem('datosReserva',JSON.stringify(''));
 
-    imprimirProductosEnHTML(arrayFiltrado);
-}
+*/
+//--------------
 
-function chequearCarritoEnStorage() {
-    let contenidoEnStorage = JSON.parse(localStorage.getItem("carritoEnStorage"));
+
+function chequearElegidosEnStorage() {
+    let contenidoEnStorage = JSON.parse(localStorage.getItem("ElegidosEnStorage"));
 
     if (contenidoEnStorage) {
         let array = [];
 
         for (const objeto of contenidoEnStorage) {
             let sesion = new Sesion (objeto);
-            sesion.actualizarCostoTotal();// Envio al arrray el objeto
+            sesion.actualizarCostoTotal();
                         array.push(sesion);
         }
 
@@ -229,8 +225,6 @@ function chequearCarritoEnStorage() {
 
     return [];
 }
-
-
 
 const sesiones = [
     {
@@ -252,14 +246,14 @@ const sesiones = [
         tipo: "Terapia Sacrouterina",
         descripcion: "Duración  1hs 30min",
         costo: 2800,
-        img: "ritoU.JPG",
+        img: "./img/mailen3.JPG",
     },
     {
         id: 3,
         tipo: "Registros Akashicos",
         descripcion: "Duración 1hr",
         costo: 2200,
-        img: "./img/reg ak.jpg",
+        img: "./img/registrosa.png",
     },
     {
         id: 4,
@@ -280,15 +274,11 @@ const sesiones = [
         tipo: "Masaje Tailandés- CLASE",
         descripcion: "Duración 5hs repartidas en 2 clases ",
         costo: 4000,
-        img: "./img/danzas1.JPG",
+        img: "./img/masaj1.JPG",
     },    
 
 ];
 
-// Ejecución del código
-// --- Invocación de funciones ---
 imprimirProductosEnHTML(sesiones);
 
-// Consulta al Storage para saber si hay información almacenada
-// Si hay datos, se imprimen en el HTML al refrescar la página
-let carrito = chequearCarritoEnStorage();
+let carrito = chequearElegidosEnStorage();
