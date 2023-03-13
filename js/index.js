@@ -146,6 +146,7 @@ function imprimirTabla(array) {
 //RESERVA
 const form = document.getElementById("contactoReserva");
     form.innerHTML = `
+    <form id="contactoReserva" class="needs-validation" novalidate>      
     <div class="form-row">
         <div class="col-md-4 mb-3 lg-3" >
             <label for="validationCustom01">Nombre para la reserva</label>
@@ -173,41 +174,23 @@ const form = document.getElementById("contactoReserva");
     </div>
     </div>
     <button id="reservacion" class="btn btn-primary" type="submit">RESERVAR</button>
+    </form>
 `
 ;
 document.body.appendChild(contactoReserva);
+form.addEventListener("submit", obtenerDatosForm)
 
-//funcion para alerta si falta un dato
-(function() {
-    'use strict';
-window.addEventListener('load', function() {
-    let forms = document.getElementsByClassName('needs-validation');
-    let validation = Array.prototype.filter.call(forms, function(form) {
-        form.addEventListener('submit', function(event) {
-            if (form.checkValidity() === false) {
-                event.preventDefault();
-                event.stopPropagation();
-            }
-        form.classList.add('was-validated');
-            }, false);
-        });
-    }, false);
+function obtenerDatosForm(e) {
+    e.preventDefault()
 
-    
+    const nombre = document.getElementById("reservaNombre").value
+    const telefono= document.getElementById("reservaTelefono").value
+    const mail= document.getElementById("reservaMail").value
+    const reservaDato = new Object(nombre + telefono + mail);
 
-})();
-
-
-
-/*/INTENTO fallido LOCALSTORAGE
-const datosReserva= document.querySelector('#reservaNombre');
-const form= document.querySelector('form');
-form.addEventListener ("submit", function (e){
-    e.preventDefault();
-});
-localStorage.setItem("contactoReseva",datosReserva.value);
-*/
-
+    localStorage.setItem('Reserva', JSON.stringify(reservaDato));    
+    swal("Gracias!", "En breve te contactaremos para coordinar tu turno", "info");
+}
 
 function chequearElegidosEnStorage() {
     let contenidoEnStorage = JSON.parse(localStorage.getItem("ElegidosEnStorage"));
@@ -285,3 +268,4 @@ const sesiones = [
 imprimirProductosEnHTML(sesiones);
 
 let carrito = chequearElegidosEnStorage();
+
