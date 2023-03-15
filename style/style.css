@@ -66,6 +66,40 @@ footer .redes a:hover {
   color: honeydew;
 }
 
+.nav-link {
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+  color: honeydew;
+  margin-top: 2px;
+  margin-left: 1em;
+  text-align: left;
+  font-size: 35px;
+}
+.nav-link:hover {
+  color: rgb(108, 60, 156);
+}
+
+#tabla-notas {
+  margin-top: 40px;
+  border-collapse: collapse;
+  margin-right: 1em;
+  width: 100%;
+  text-align: center;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+}
+
+/* Estilo para las filas de la tabla de calificaciones */
+#tabla-notas tr:nth-child(even) {
+  background-color: rgba(250, 241, 241, 0.8666666667);
+}
+
+/* Estilo para las celdas de la tabla de calificaciones */
+#tabla-notas td,
+#tabla-notas th {
+  border: 2px rgba(5, 5, 5, 0);
+  padding: 8px;
+}
+
 .subir {
   color: honeydew;
   position: fixed;

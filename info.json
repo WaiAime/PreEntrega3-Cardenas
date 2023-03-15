@@ -1,0 +1,52 @@
+[
+    {
+        "nombre": "Reiki",
+        "descripcion": "El Reiki es una práctica espiritual con las dimensiones basadas en la materia y espíritu,caracterizado por la imposición de manos con el fin de restablecer el equilibrio del cuerpo. Este es uno de los métodos curativos más antiguos de que la humanidad tiene conocimiento",
+        "tipo": "Individual",
+        "duracion": "50 min",
+        "activo": true
+    },
+    {
+        "nombre": "Masaje Tailandés",
+        "descripcion": "Masaje terapéutico que trabaja a nivel físico, energético y emocional abarcando al cuerpo de manera global. Se realiza en el suelo (sobre futón o alguna base blanda)",
+        "tipo": "Individual",
+        "duracion": "1hr",
+        "activo": true
+    },
+
+    {
+        "nombre": "Terapia Sacrouterina",
+        "descripcion": "Herramienta tantrica que trabaja a niveles energéticos en el proceso depurativo de memorias emocionales y sexuales. Permitiendo de éste modo la renovación de nuestras aguas fértiles y creativas, devolviéndonos la posibilidad de fluir en el presente, honrando la mujer/hombre/ser.",
+        "tipo": "Individual",
+        "duracion": "1hr 30min",
+        "activo": true
+    },
+    {
+        "nombre": "Registros Akashicos",
+        "descripcion": "Según la tradición hindú, son los archivos de las memorias del alma, donde se guardan los archivos que contienen la historia de toda la existencia. Recorriendo uno a uno los chakras recibimos información que nos ayuda a comprender nuestras emociones, actos, pensamientos, manera de vivir, espíritu, transformándonos tanto a nivel mental como energético.",
+        "tipo": "Individual",
+        "duracion":"1hr",
+        "activo": true
+    },
+    {
+        "nombre": "Rito del Útero",
+        "descripcion": "Es una meditación guiada incaica. Se cree que venimos a este mundo trayendo con nosotras ,los dolores sufrimientos y miedos de nuestras ancestras. Ellas son nuestro linaje. En la sanación del linaje materno lo que hacemos es mediante la medida y gracias a la energía de la luna",
+        "tipo": "Grupal",
+        "duracion":"2hs",
+        "activo": false
+    },
+    {
+        "nombre": "Danzas Circulares",
+        "descripcion": "La práctica de las danzas permite cultivar la esencia del ser humano, esa conexión y sintonía con el poder ancestral y espiritual.    Son una de las manifestaciones más antiguas del mundo. En estos encuentros exploraremos los elementos / tierra, agua, aire, fuego, éter  a través del movimiento, el canto, la respiración consciente, observando cómo nos atraviesan individualmente y se expanden al danzar en círculo",
+        "tipo": "Grupal",
+        "duracion":"3hs",
+        "activo": false
+    },
+    {
+        "nombre": "Masaje Tailandés TALLER",
+        "descripcion": "En este taller aprenderás las técnicas del masaje. Se basa en presiones, que se realizan con los dedos, las manos, los codos o las rodillas del terapeuta, y estiramientos. Estos ayudan a eliminar las tensiones de cada músculo y hacen fluir la energía de nuestro cuerpo.",
+        "tipo": "Grupal",
+        "duracion":"5hs repartidas en 2 clases",
+        "activo": false
+    }
+]

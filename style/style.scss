@@ -56,6 +56,7 @@ body{
     font-family: $font2;
     position: relative;
 }
+
 footer{
     background-color: $colorfondo1;
     text-align: center;
@@ -79,7 +80,41 @@ footer{
                 }
         }
 } 
-        
+.nav-link{ 
+    text-decoration: none;
+    font-family: $font2;
+    color: $colorH;
+    margin-top:2px;
+    margin-left: 1em;
+    text-align: left;
+    font-size: 35px;
+        &:hover{
+            color: $colorfuente2;
+        }
+
+}
+
+#tabla-notas {
+    margin-top: 40px;
+    border-collapse: collapse;
+    margin-right: 1em;
+    width: 100%;
+    text-align: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Estilo para las filas de la tabla de calificaciones */
+#tabla-notas tr:nth-child(even) {
+    background-color: #faf1f1dd;
+}
+
+/* Estilo para las celdas de la tabla de calificaciones */
+#tabla-notas td,
+#tabla-notas th {
+    border: 2px  #05050500;
+    padding: 8px;
+}
+
 .subir{
     color: $colorH;
     position: fixed;
