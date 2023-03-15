@@ -87,30 +87,31 @@ footer{
     margin-top:2px;
     margin-left: 1em;
     text-align: left;
-    font-size: 35px;
+    font-size: 25px;
         &:hover{
             color: $colorfuente2;
         }
 
 }
 
-#tabla-notas {
+#tabla-detalles {
     margin-top: 40px;
     border-collapse: collapse;
     margin-right: 1em;
     width: 100%;
     text-align: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: $colorfuente3;
 }
 
-/* Estilo para las filas de la tabla de calificaciones */
-#tabla-notas tr:nth-child(even) {
+
+#tabla-detalles tr:nth-child(even) {
     background-color: #faf1f1dd;
 }
 
-/* Estilo para las celdas de la tabla de calificaciones */
-#tabla-notas td,
-#tabla-notas th {
+
+#tabla-detalles td,
+#tabla-detalles th {
     border: 2px  #05050500;
     padding: 8px;
 }

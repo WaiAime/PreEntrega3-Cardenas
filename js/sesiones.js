@@ -1,9 +1,9 @@
-const tabla = document.querySelector('#tabla-notas tbody');
+const tabla = document.querySelector('#tabla-detalles tbody');
 
 fetch('info.json')
   .then(response => response.json())
-  .then(alumnos => {
-    alumnos.forEach(estudiante => {
+  .then(sesiones => {
+    sesiones.forEach(detalle => {
       const fila = document.createElement('tr');
       const nombre = document.createElement('td');
       const tipo = document.createElement('td');
@@ -13,11 +13,11 @@ fetch('info.json')
       const descripcion = document.createElement('td');
 
       
-      nombre.textContent = estudiante.nombre;
-      tipo.textContent = estudiante.tipo;
-      estado.textContent = estudiante.activo ? 'Reserva tu Turno' : 'Proximamente Fechas';
-      duracion.textContent = estudiante.duracion;
-      descripcion.textContent = estudiante.descripcion;
+      nombre.textContent = detalle.nombre;
+      tipo.textContent = detalle.tipo;
+      estado.textContent = detalle.activo ? 'Reserva tu Turno' : 'Proximamente Fechas';
+      duracion.textContent = detalle.duracion;
+      descripcion.textContent = detalle.descripcion;
 
       
       fila.appendChild(nombre);
