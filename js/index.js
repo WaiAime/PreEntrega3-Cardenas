@@ -68,6 +68,7 @@ function agregarAlCarrito(producto) {
 
     localStorage.setItem("elegidosEnStorage", JSON.stringify(carrito));
     imprimirTabla(carrito);
+    swal("Agregado al carrito!");
 }
 
 function eliminarDelCarrito(id) {
@@ -82,6 +83,8 @@ function eliminarDelCarrito(id) {
 
     localStorage.setItem("elegidosEnStorage", JSON.stringify(carrito));
     imprimirTabla(carrito);
+    
+
 }
 
 function eliminarCarrito() {
@@ -179,6 +182,9 @@ const form = document.getElementById("contactoReserva");
 ;
 document.body.appendChild(contactoReserva);
 form.addEventListener("submit", obtenerDatosForm)
+form.addEventListener('submit', function() {
+form.reset();
+});
 
 function obtenerDatosForm(e) {
     e.preventDefault()
